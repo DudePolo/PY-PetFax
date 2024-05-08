@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit Form Page</title>
+</head>
+<body>
+    <h1>Submit Fax</h1>
+    <p>If you have some fun animal facts you'd like to share, please submit them! We may use them in the future!</p>
+    <form action="">
+        <label for="name">Name</label>
+        <input type="text" id="{{pet_name}}" name="name">
+        <label for="fact">Fact</label>
+        <input type="text" id="{{pet_fact}}">
+        <button>Submit</button>
+    </form>
+    <p>
+        <a href="{{ url_for('pet.index') }}">Go Back</a>
+    </p>
+        
+</body>
+</html>

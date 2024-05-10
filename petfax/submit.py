@@ -1,7 +1,7 @@
-from flask import ( Blueprint, render_template, request )
+from flask import ( Blueprint, render_template, request, redirect )
 bp = Blueprint('submit', __name__, url_prefix='/facts')
 
-@bp.route('/new', methods=('GET', 'POST'))
+@bp.route('/', methods=('GET', 'POST'))
 def new_fact():
     if request.method == 'POST':
         # Handle form submission here
@@ -10,4 +10,8 @@ def new_fact():
         return 'Fact submitted: {}'.format(fact_text)
     else:
         # Render the form template for GET requests
-        return render_template('submitForm.html')
+        return render_template('facts/submitForm.html')
+    
+@bp.route('/new')
+def new(): 
+    return render_template('facts/index.html')
